@@ -1,0 +1,240 @@
+
+:root{
+  --primary:#5f6FFF;
+ 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+.App {
+  margin: 0rem 1rem;
+}
+
+@media (min-width: 640px) {
+ .App{
+
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+} 
+
+.navlink{
+ padding: 0rem 0.25rem;
+ text-decoration: none;
+}
+
+.navlink>hr{
+ 
+  margin: auto;
+  width: 75%;
+  border: none;
+  
+  
+}
+.active>hr{
+ 
+  margin: auto;
+  width: 75%;
+  border: 1px solid var(--primary);
+  
+  
+}
+.btn{
+  padding: 0.75rem 2rem;
+  color: white;
+  background-color: var(--primary);
+  font-weight: 400;
+  border-radius: 20px;
+  border: none;
+  outline: auto;
+  cursor: pointer;
+}
+.login{
+  position: absolute; 
+  top: 0;
+  right: 0;
+  padding-top: 3.5rem;
+  display: none;
+  
+}
+.login>div{
+  min-width: 12rem;
+  background-color: rgb(245 245 244);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 14px;
+  color: grey;
+  gap: 20px;
+
+
+}
+.login>div>p:hover{
+
+  color: black;
+  cursor: pointer;
+  
+
+
+}
+.parent:hover .login{
+  display: block;
+
+}
+.bookapp>a{
+  display:flex;
+  text-decoration: none;
+  align-items:center;
+  background-color:white;
+  padding:0.5rem 1.5rem;
+  border-radius:30px;
+  transition-duration: 0.2s;
+
+}
+
+.bookapp >a:hover {
+    transform:scale(1.05,1.05);
+    -webkit-transform:scale(1.05,1.05); 
+     -moz-transform:scale(1.05,1.05);
+     font-weight: 600;
+     
+} 
+.specialitylink{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition-duration: 0.6s;
+
+}
+.specialitylink:hover{
+  translate: 0 -15px;
+ 
+}
+.topdoctorscard{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap:1rem;
+  padding: 0px 0.75rem;
+  padding-top: 1.25rem;
+  width: 100%;
+  
+  cursor: pointer;
+  overflow: auto;
+
+}
+
+.topdoctorscard > div{
+  
+  transition-duration: 0.6s;
+  
+
+
+}
+
+
+
+.topdoctorscard > div:hover{
+  translate: 0 -15px;  
+  color: rgb(51, 51, 51);
+
+}
+.doctors >div>div>p{
+  border: 1px solid grey;
+  border-radius: 4px;
+  /*top,right, bottom,left */
+  padding: 0.35rem 4rem 0.35rem 0.75rem;
+  cursor: pointer;
+  color: rgb(213, 195, 226);
+  color: rgb(91, 87, 87)
+}
+.aboutus-whychooseus{
+  display: flex;
+  margin-bottom: 5rem;
+
+}
+.aboutus-whychooseus>div{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  gap: 1.25rem;
+  font-size: 15px;
+  border: 1px solid grey;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+
+
+}
+.aboutus-whychooseus>div:hover{
+ background-color: var(--primary);
+ color: white;
+ 
+
+}
+
+.contactus-btn{
+  padding: 1rem 2rem;
+  border: 2px solid grey;
+  background-color: white;
+  transition-duration: 0.5s;
+  border-radius: 3px;
+}
+
+.contactus-btn:hover{
+  background-color: black;
+  color: white;
+
+}
+
+.myprofile-button{
+  padding:0.5rem 2rem ;
+  border-radius: 20px;
+  transition-duration: 0.6s;
+ 
+
+}
+
+.myprofile-button:hover{
+background-color: var(--primary);
+color: white;
+
+}
+.myappointment-btn-pay{
+  margin-right:1rem ;
+  min-width: 12rem;
+  border-radius: 10px;
+  padding: 0.5rem 0rem;
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+}
+.myappointment-btn-cancel{
+  margin-right:1rem ;
+  min-width: 12rem;
+  border-radius: 10px;
+  padding: 0.5rem 0rem;
+  transition-duration: 0.3s;
+  cursor: pointer;
+
+}
+.myappointment-btn-pay:hover{
+background-color: var(--primary);
+color: white;
+
+}
+.myappointment-btn-cancel:hover{
+background-color: rgb(204, 24, 24);
+color: white;
+
+}
+
+
+

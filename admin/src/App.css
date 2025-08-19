@@ -1,0 +1,64 @@
+
+:root{
+  --primary:#5f6FFF;
+
+ 
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.doctors-list>div>div>img{
+  background-color: rgb(223, 218, 226);
+  transition-duration: 0.6s;
+
+}
+
+.doctors-list>div>div>img:hover{
+  background-color:var(--primary);
+
+}
+
+.AllAppointments-apponitments-item{
+  background-color: white;
+}
+
+.AllAppointments-apponitments-item:hover{
+  background-color: rgb(241, 234, 234);
+}
+
+.dashboard-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  padding: 1rem;
+  min-width: 13rem;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-box:hover {
+  transform: scale(1.05);
+}
+
+.dashboard-dashdata-item{
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-dashdata-item:hover{
+  background-color: rgb(203, 192, 192);
+
+}
+.btn-hover-primary{
+   transition: all 0.3s ease-in-out;
+}
+.btn-hover-primary:hover{
+   background-color: var(--primary);
+}
+
+
