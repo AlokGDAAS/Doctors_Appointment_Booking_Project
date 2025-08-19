@@ -69,7 +69,7 @@ function Header() {
       {/*-------------------Right side------------------ */}
       <div style={{ paddingTop: "60px" }}>
         <img
-          src={assets.header_img}
+          src={assets.header2}
           alt=""
           style={{
             width: "100%",

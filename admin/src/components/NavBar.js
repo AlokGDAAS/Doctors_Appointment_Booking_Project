@@ -37,7 +37,7 @@ function NavBar() {
         }}
       >
         <img
-          src={assets.admin_logo}
+          src={assets.bookmydoclogo}
           style={{ width: "9rem", cursor: "pointer" }}
         />
         <p

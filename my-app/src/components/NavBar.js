@@ -29,7 +29,7 @@ function NavBar() {
       <img
         onClick={() => navigate("/")}
         src={assets.logo}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer" ,width:"10rem"}}
       />
       <div style={{ display: "flex", fontWeight: "600", gap: "30px" }}>
         <NavLink to="/" className="navlink">
