@@ -26,7 +26,7 @@ function Login() {
         });
         if (data.success) {
           localStorage.setItem('atoken',data.token)
-          setDtoken(data.token);
+          setAtoken(data.token);
           console.log(data.token)
         }else{
             toast.error(data.message)
@@ -37,7 +37,7 @@ function Login() {
      const {data}=await axios.post(backendUrl +'/api/doctor/login-doctor',{email,password})
         if (data.success) {
           localStorage.setItem('dtoken',data.token)
-          setAtoken(data.token);
+          setDtoken(data.token);
         }else{
             toast.error(data.message)
         }     
