@@ -3,7 +3,7 @@ import axios from 'axios'
 import {toast} from 'react-toastify'
 
 export const AppContext = createContext()
-
+const API_BASE = process.env.REACT_APP_BACKEND_URL
 
 const AppContextProvider = (props)=>{
 
