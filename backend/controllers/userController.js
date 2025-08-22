@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken'
 import {v2 as cloudinary} from 'cloudinary'
 import doctorModel from '../models/doctorsModels.js'
 import appointmentModel from '../models/appointmentModel.js'
-import razorpay from 'razorpay'
+import Razorpay from 'razorpay'
 
 
 const registerUser = async (req,res)=>{
@@ -247,7 +247,7 @@ const cancelAppointment = async (req,res)=>{
 
 //Api to make payment of appointment
 
-const razorpayInstance = new razorpay({
+const razorpayInstance = new Razorpay({
     key_id:process.env.RAZOR_PAY_KEY_ID,
     key_secret:process.env.RAZOR_PAY_KEY_SECRET
 })
@@ -271,11 +271,12 @@ const paymentRazorpay =async(req,res)=>{
             currency:process.env.CURRENCY,
             receipt:appointmentId,
          }
-
+         console.log("razorpay instance " ,razorpayInstance)
+         console.log("options ",options)
          // creation if an order
 
-         const order = await razorpayInstance.orders.create(options)
-
+         const order =  await razorpayInstance.orders.create(options)
+          console.log("order ",order)
          res.json({success:true,order})
         
     } catch (error) {
@@ -291,6 +292,7 @@ const verifyRazorpay = async (req,res) =>{
     try {
         const {razorpay_order_id} = req.body
         const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)
+        console.log("orderInfo ",orderInfo)
         
         if(orderInfo.status === 'paid'){
             await appointmentModel.findByIdAndUpdate(orderInfo.receipt,{payment:true})

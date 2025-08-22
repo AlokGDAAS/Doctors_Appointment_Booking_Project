@@ -62,7 +62,7 @@ function MyAppointments() {
       const initPay =(order)=>{
 
         const options = {
-          key:'rzp_test_R689X6gO1O852P',
+          key:'rzp_test_R8Enz5lG1fXJ9d',
           amount:order.amount,
           currency:order.currency,
           name:'Appointment Payment',
@@ -70,7 +70,7 @@ function MyAppointments() {
           order_id:order.id,
           receipt:order.receipt,
           handler:async(response)=>{
-            console.log(response)
+            console.log("initpay response ",response)
 
             try {
               const {data} = await axios.post(backendUrl +'/api/user/verifyrazorpay',response,{headers:{token}})
@@ -97,13 +97,15 @@ function MyAppointments() {
         
          try {
           const {data} = await axios.post(backendUrl+'/api/user/payment-razorpay', {appointmentId},{headers:{token}})
-          console.log(data.order)
-            if(data.success){
 
+          console.log("appointment id" , appointmentId)
+          
+            if(data.success){
                 initPay(data.order)
             }else{
               toast.error(data.message)
             }
+            console.log("order data ",data.order)
          } catch (error) {
                 console.log(error)
                 toast.error(error.message)  

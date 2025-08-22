@@ -153,7 +153,7 @@ function Login() {
           <div>
             {state === "Sign Up" ? (
               <p>
-                Already hve an account ?{" "}
+                Already have an account ?{" "}
                 <span
                   onClick={() => setState("Login")}
                   style={{

@@ -13,6 +13,7 @@ function NavBar() {
     localStorage.removeItem('token')
     navigate('/')
   }
+  
  
 
   return (
