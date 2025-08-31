@@ -19,6 +19,7 @@ function Header() {
         <div className="">
           <a href="#speciality" className="flex items-center gap-2 bg-white px-8 py-3 rounded-full text-gray-600 text-sm m-auto md:m-0 hover:scale-105 transition-all duration-300">
             Book appointment{" "}
+            
             <img  src={assets.arrow_icon}  alt="" className="ml-2 w-3"/>
           </a>
         </div>
