@@ -19,29 +19,15 @@ function RelatedDoctors({ docId, speciality }) {
 
   return (
     <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1rem",
-          color: "rgb(41, 33, 33)",
-          margin: "4rem 0rem",
-        }}
-      >
-        <h1>Related Doctors </h1>
-        <p
-          style={{
-            textAlign: "center",
-            width: "35%",
-            fontSize: "0.875rem",
-            lineHeight: "1.25rem",
-          }}
+      <div className="flex flex-col items-center gap-4 my-16 text-gray-900 md:mx-10">
+        <h1 className="text-3xl font-medium">Related Doctors </h1>
+        <p className="sm:w-1/3 text-center text-sm"
+
         >
           simply browse through our extensive list of trusted doctors, schedule
           your appointment hassle-free
         </p>
-        <div className="topdoctorscard">
+        <div className="w-full topDoctors-card gap-4 pt-5 gap-y-6 px-3 sm:px-0">
           {relDoc.slice(0, 5).map((item, index) => (
             <div
               onClick={() => {

@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -15,7 +15,7 @@ import MyAppointments from "./pages/MyAppointments";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App sm:p-0">
       <div>
         <ToastContainer/>
         <NavBar />

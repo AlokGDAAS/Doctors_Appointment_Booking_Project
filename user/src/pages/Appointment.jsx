@@ -137,64 +137,35 @@ function Appointment() {
 
   return (
     docInfo && (
-      <div>
-        <div style={{ marginBottom: "0.5rem" }}>
+      <div>        
           {/* ----------------- doctors detail ------------------ */}
-          <div style={{ display: "flex", gap: "1rem", backgroundColor: "" }}>
+          <div className="flex flex-col sm:flex-row gap-4">
             <div>
               <img
                 src={docInfo.image}
                 alt=""
-                style={{
-                  backgroundColor: "var(--primary)",
-                  width: "100%",
-                  borderRadius: "10px",
-                }}
-              />
+                style={{backgroundColor: "var(--primary)"}}
+                className="w-full sm:max-w-72 rounded-lg"/>
             </div>
-
+           {/* -----------------doc info : Name , degree, experience------------------ */}
             <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1rem",
-                border: "1px solid grey",
-                padding: "1rem 1.75rem",
-                borderRadius: "10px",
-                margin: "0rem 0.5rem",
-                width: "100%",
-              }}
+            className="flex-1 border border-gray-400 rounded-lg p-8 py-7 bg-white mx-2 sn:mx-0 mt-[-80px] sm:mt-0 "
             >
-              {/* -----------------doc info : Name , degree, experience------------------ */}
+              
               <p
-                style={{
-                  display: "flex",
-                  gap: "0.5rem",
-                  fontSize: "24px",
-                  alignItems: "center",
-                  fontWeight: "500",
-                }}
+                className="flex items-center gap-2 text-2xl font-medium text-gray-900"
               >
                 {docInfo.name}
-                <img src={assets.verified_icon} width="3%" />
+                <img src={assets.verified_icon} className="w-5" />
               </p>
               <div
-                style={{
-                  display: "flex",
-                  gap: "0.5rem",
-                  marginTop: "0.25",
-                  alignItems: "center",
-                }}
+               className="flex items-center gap-2 text-sm mt-1 text-gray-600"
               >
                 <p>
                   {docInfo.degree} - {docInfo.speciality}
                 </p>
                 <button
-                  style={{
-                    padding: "0.125rem 0.5rem",
-                    border: "1px solid grey",
-                    borderRadius: "10px",
-                  }}
+                  className="py-0.5 px-2 border text-xs rounded-full"
                 >
                   {docInfo.experience}
                 </button>
@@ -202,12 +173,7 @@ function Appointment() {
               {/* -----------------doctor about------------------ */}
               <div>
                 <p
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "0.25",
-                    fontWeight: "500",
-                  }}
+                   className="flex items-center gap-1  font-medium text-gray-900 mt-3"
                 >
                   About{" "}
                   <img
@@ -215,75 +181,31 @@ function Appointment() {
                     style={{ padding: "0rem 0.5rem" }}
                   />
                 </p>
-                <p
-                  style={{
-                    maxWidth: "700px",
-                    marginTop: "0.75rem",
-                    fontSize: "14px",
-                    lineHeight: "20px",
-                  }}
-                >
-                  {docInfo.about}
-                </p>
+                <p className="text-sm text-gray-500 max-w-[700px] mt-1">{docInfo.about}</p>
               </div>
-              <p>
+              
+              <p className="text-gray-500 font-medium mt-4">
                 Appointment fee:{" "}
-                <span>
+                <span className="text-gray-600">
                   {currencySymbol}
                   {docInfo.fees}
                 </span>
               </p>
             </div>
           </div>
-        </div>
+      
         {/*----------Booking slots -------------*/}
 
         <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700"
         >
-          <p style={{ textAlign: "center" }}>Booking slots</p>
-          <div
-            style={{
-              display: "flex",
-              gap: "1rem",
-              alignItems: "center",
-              justifyContent: "center",
-              marginTop: "1rem",
-              overflow: "auto",
-              width: "100%",
-            }}
-          >
+          <p>Booking slots</p>
+          <div className="flex gap-3 items-center w-full overflow-x-scroll mt-4">
             {docSlots.length &&
               docSlots.map((daySlots, index) => (
                 <div key={index}
                   onClick={() => setSlotIndex(index)}
-                  style={
-                    slotIndex == index
-                      ? {
-                          textAlign: "center",
-                          padding: "1.5rem 0rem",
-                          borderRadius: "40px",
-                          backgroundColor: "var(--primary)",
-                          cursor: "pointer",
-                          fontSize: "14px",
-                          color: "white",
-                          minWidth: "3.75rem",
-                        }
-                      : {
-                          textAlign: "center",
-                          padding: "1.5rem 0rem",
-                          borderRadius: "40px",
-                          border: "1px solid gray",
-                          cursor: "pointer",
-                          fontSize: "14px",
-                          minWidth: "3.75rem",
-                        }
-                  }
+                  className={`text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex ===index ? `bg-indigo-500 text-white`:`border border-gray-200` }`}
                 >
                   <p>
                     {daySlots[0] && daysOfWeek[daySlots[0].dateTime.getDay()]}
@@ -293,58 +215,31 @@ function Appointment() {
               ))}
           </div>
           <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "0.75rem",
-              width: "50%",
-              overflowX: "scroll",
-              marginTop: "1rem",
-            }}
+             className="flex items-center gap-3 w-full overflow-x-scroll mt-4"
           >
             {docSlots.length &&
               docSlots[slotIndex].map((item, index) => (
                 <p
                   key={index}
                   onClick={() => setSlotTime(item.time)}
-                  style={
-                    item.time == slotTime
-                      ? {
-                          display: "flex",
-                          padding: "0.5rem 0.5rem",
-                          cursor: "pointer",
-                          borderRadius: "20px",
-                          flexShrink: "0",
-                          fontSize: "12px",
-                          border: "0.5px solid grey",
-                          backgroundColor: "var(--primary)",
-                          color: "white",
-                        }
-                      : {
-                          display: "flex",
-                          padding: "0.5rem 0.5rem",
-                          cursor: "pointer",
-                          borderRadius: "20px",
-                          flexShrink: "0",
-                          fontSize: "12px",
-                          border: "0.5px solid grey",
-                        }
-                  }
+                  className={`text-sm font-light flex flex-shrink-0 px-5 py-2 rounded-full cursor-pointer  ${item.time === slotTime ? `bg-indigo-500 text-white`: `text-gray-400 border border-gray-300`}`}
                 >
                   {item.time.toLowerCase()}
                 </p>
               ))}
           </div>
-        </div>
         <div>
           <button
-            className="btn"
-            style={{ marginLeft: "18rem", marginTop: "2rem" }}
+            className="text-sm text-white font-light px-14 py-3 rounded-full my-6"
+            style={{backgroundColor:"var(--primary)"}}
             onClick={bookAppointment}
           >
-            Book appoinument
+            Book appointment
           </button>
         </div>
+          
+        </div>
+
         <RelatedDoctors docId={docId} speciality={docInfo.speciality} />
       </div>
     )

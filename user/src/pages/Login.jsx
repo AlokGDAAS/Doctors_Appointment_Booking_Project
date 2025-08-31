@@ -62,25 +62,10 @@ function Login() {
     <div>
       <form
         onSubmit={handleSubmit}
-        style={{ minHeight: "80vh", display: "flex" }}
+        className="min-h-[80vh] flex items-center"
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "0.75rem",
-            alignItems: "start",
-            margin: "auto",
-            padding: "3rem",
-            minWidth: "380px",
-            //  border:"0.5px solid grey",
-            borderRadius: "10px",
-            color: "zinc",
-            boxShadow: "0px 0px  20px rgb(137, 125, 125)",
-            fontSize: "14px",
-          }}
-        >
-          <p style={{ fontSize: "24px", fontWeight: "500" }}>
+        <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg ">
+          <p className="text-2xl font-semibold">
             {state == "Sign Up" ? "Create Account" : "Login"}
           </p>
           <p>
@@ -88,72 +73,47 @@ function Login() {
             appointment
           </p>
           {state === "Sign Up" && (
-            <div style={{ width: "100%" }}>
+            <div className="w-full">
               <p>Full Name</p>
               <input
                 type="text"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
-                style={{
-                  padding: "0.5rem",
-                  marginTop: "0.25rem",
-                  width: "100%",
-                  borderRadius: "5px",
-                  border: "1px solid grey",
-                }}
+                className="border border-zinc-300 rounded w-full p-2 mt-1"
               />
             </div>
           )}
 
-          <div style={{ width: "100%" }}>
+          <div className="w-full">
             <p>Email</p>
             <input
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              style={{
-                padding: "0.5rem",
-                marginTop: "0.25rem",
-                width: "100%",
-                borderRadius: "5px",
-                border: "1px solid grey",
-              }}
+              className="border border-zinc-300 rounded w-full p-2 mt-1"
             />
           </div>
-          <div style={{ width: "100%" }}>
+          <div className="w-full">
             <p>Password</p>
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
-              style={{
-                padding: "0.5rem",
-                marginTop: "0.25rem",
-                width: "100%",
-                borderRadius: "5px",
-                border: "1px solid grey",
-              }}
+              className="border border-zinc-300 rounded w-full p-2 mt-1"
             />
           </div>
 
           <button
             type="submit"
-            style={{
-              padding: "0.75rem",
-              marginTop: "1.5em",
-              width: "100%",
-              borderRadius: "5px",
-              border: "1px solid grey",
-              backgroundColor: "var(--primary)",
-              color: "white",
-            }}
+            style={{ backgroundColor: "var(--primary)"}}
+            className="text-white w-full py-2 rounded-md text-base "
           >
             {state == "Sign Up" ? "Create Account" : "Login"}
           </button>
           <div>
             {state === "Sign Up" ? (
               <p>
-                Already have an account ?{" "}
+                Already hve an account ?{" "}
                 <span
                   onClick={() => setState("Login")}
                   style={{

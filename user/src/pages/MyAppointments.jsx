@@ -70,7 +70,7 @@ function MyAppointments() {
           order_id:order.id,
           receipt:order.receipt,
           handler:async(response)=>{
-            console.log("initpay response ",response)
+            console.log(response)
 
             try {
               const {data} = await axios.post(backendUrl +'/api/user/verifyrazorpay',response,{headers:{token}})
@@ -97,15 +97,13 @@ function MyAppointments() {
         
          try {
           const {data} = await axios.post(backendUrl+'/api/user/payment-razorpay', {appointmentId},{headers:{token}})
-
-          console.log("appointment id" , appointmentId)
-          
+          console.log(data.order)
             if(data.success){
+
                 initPay(data.order)
             }else{
               toast.error(data.message)
             }
-            console.log("order data ",data.order)
          } catch (error) {
                 console.log(error)
                 toast.error(error.message)  
@@ -172,14 +170,14 @@ function MyAppointments() {
             <div></div>
             <div style={{ display:"flex", flexDirection:"column", gap:"0.5rem", justifyContent:"end" }}>
 
-             {!item.cancelled && item.payment && !item.isCompleted && <button className="myappointment-btn-pay">Paid</button>}
-              {!item.cancelled && !item.payment && !item.isCompleted && <button className="myappointment-btn-pay" onClick={()=>appointmentRazorpay(item._id)}>Pay Online</button> }
+             {!item.cancelled && item.payment && !item.isCompleted && <button className="text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-green-500 hover:text-white transition-all duration-300 ">Paid</button>}
+              {!item.cancelled && !item.payment && !item.isCompleted && <button className="text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-green-500 hover:text-white transition-all duration-300 " onClick={()=>appointmentRazorpay(item._id)}>Pay Online</button> }
 
-              {!item.cancelled && !item.isCompleted &&  <button className="myappointment-btn-cancel" onClick={()=>cancelAppointment(item._id)}>
+              {!item.cancelled && !item.isCompleted &&  <button className="text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-red-600 hover:text-white transition-all duration-300 " onClick={()=>cancelAppointment(item._id)}>
                 Cancel Apponitment
               </button>}
-              {item.cancelled && !item.isCompleted && <button className="myappointment-btn-cancel">Appointment cancelled</button>}
-              {item.isCompleted && <button className="myappointment-btn-pay">Appointment completed</button>}
+              {item.cancelled && !item.isCompleted && <button className="text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-red-600 hover:text-white transition-all duration-300 ">Appointment cancelled</button>}
+              {item.isCompleted && <button className="text-stone-500 text-center sm:min-w-48 py-2 border rounded hover:bg-indigo-500 hover:text-white transition-all duration-300 ">Appointment completed</button>}
             </div>
           </div>
         ))}

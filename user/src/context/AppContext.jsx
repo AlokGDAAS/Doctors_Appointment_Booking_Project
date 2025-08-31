@@ -3,13 +3,13 @@ import axios from 'axios'
 import {toast} from 'react-toastify'
 
 export const AppContext = createContext()
-const API_BASE = process.env.REACT_APP_BACKEND_URL
+
 
 const AppContextProvider = (props)=>{
 
     const currencySymbol = "$"
 
-    const backendUrl = process.env.REACT_APP_BACKEND_URL
+    const backendUrl = import.meta.env.VITE_APP_BACKEND_URL
     const [doctors,setDoctors] =useState([])
     const [token,setToken] =useState(localStorage.getItem('token')?localStorage.getItem('token'):false)
     const [userData, setUserData] = useState(false)

@@ -3,40 +3,21 @@ import { assets } from "../assets/assets_frontend/assets";
 
 function About() {
   return (
-    <div className="aboutus">
+    <div className="">
       <div
-        style={{
-          textAlign: "center",
-          fontSize: "1.5rem",
-          fontWeight: "bold",
-          color: "rgb(91, 87, 87)",
-        }}
+       className="text-center text-2xl pt-10 text-gray-500"
       >
         <p>
-          ABOUT <span style={{ color: "rgb(40, 38, 38)" }}>US</span>
+          ABOUT <span className="text-gray-700">US</span>
         </p>
       </div>
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          gap: "3rem",
-          margin: "2.5rem 0rem",
-        }}
-      >
+      <div className="my-10 flex flex-col md:flex-row gap-12">
         <img
           src={assets.about_image}
           alt=""
-          style={{ width: "100%", maxWidth: "360px" }}
+          className="w-full max-w-[360px]"
         />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.5rem",
-            fontSize: "14px",
-          }}
-        >
+        <div className="flex flex-col justify-center gap-6 md:w-2/4 text-sm text-gray-600">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
             nemo dolorum iusto quidem rem maiores, quisquam iste voluptatem
@@ -49,7 +30,7 @@ function About() {
             architecto maxime! Voluptatibus nulla, fugit iure dolorum illum quos
             numquam magni repudiandae.
           </p>
-          <b>Our Vision</b>
+          <b className="text-gray-800">Our Vision</b>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
             nemo dolorum iusto quidem rem maiores, quisquam iste voluptatem
@@ -58,21 +39,14 @@ function About() {
           </p>
         </div>
       </div>
-      <div
-        style={{
-          fontSize: "1.5rem",
-          fontWeight: "bold",
-          color: "rgb(91, 87, 87)",
-          margin: "1rem 0rem",
-        }}
-      >
+      <div className="text-xl my-4" >
         <p>
-          WHY<span style={{ color: "rgb(40, 38, 38)" }}>CHOOSE US</span>{" "}
+          WHY<span className="text-gray-700 font-semibold">CHOOSE US</span>{" "}
         </p>
       </div>
 
-      <div className="aboutus-whychooseus">
-        <div>
+      <div className="flex flex-col md:flex-row mb-20">
+        <div className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-indigo-500 hover:text-white transition-all duration-300 text-gray-600 cursor:pointer">
           <b>Efficiency :</b>
           <p>
             Streamlined Apponitment Scheduking That Fits into Your Busy
@@ -80,14 +54,14 @@ function About() {
           </p>
         </div>
 
-        <div>
+        <div  className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-indigo-500 hover:text-white transition-all duration-300 text-gray-600 cursor:pointer">
           <b>Convenience :</b>
           <p>
             Access to network of Trusted Healthcare Professionals in Your Area
           </p>
         </div>
 
-        <div>
+        <div  className="border px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-5 text-[15px] hover:bg-indigo-500 hover:text-white transition-all duration-300 text-gray-600 cursor:pointer">
           <b>Personalization :</b>
           <p>
             Tailored Recommendations and Reminders to Help You Stay On Top Of

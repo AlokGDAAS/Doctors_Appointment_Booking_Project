@@ -22,25 +22,11 @@ function Doctors() {
   }, [doctors, speciality]);
 
   return (
-    <div className="doctors">
+    <div className="">
       <p>Browse through the doctors speciality</p>
-      <div
-        style={{
-          display: "flex",
-          marginTop: "1.25rem",
-          gap: "1.25rem",
-          alignItems: "start",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.25rem",
-            paddingTop: "1.25rem",
-          }}
-        >
-          <p
+      <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
+        <div className="flex flex-col gap-4 text-sm text-gray-600 w-1/5">
+          <p className="w-[94vw] sm:w-auto  pl-3 py-1.5 pr-16  border border-gray-300 rounded transition-all cursor-pointer "
             onClick={() =>
               speciality === "General Physician"
                 ? navigate("/doctors")
@@ -55,7 +41,7 @@ function Doctors() {
             General Physician
           </p>
 
-          <p
+          <p className="w-[94vw] sm:w-auto  pl-3 py-1.5 pr-16  border border-gray-300 rounded transition-all cursor-pointer "
             onClick={() =>
               speciality === "Gynecologist"
                 ? navigate("/doctors")
@@ -70,7 +56,7 @@ function Doctors() {
             Gynecologist
           </p>
 
-          <p
+          <p className="w-[94vw] sm:w-auto  pl-3 py-1.5 pr-16  border border-gray-300 rounded transition-all cursor-pointer "
             onClick={() =>
               speciality === "Dermatologist"
                 ? navigate("/doctors")
@@ -85,7 +71,7 @@ function Doctors() {
             Dermatologist
           </p>
 
-          <p
+          <p className="w-[94vw] sm:w-auto  pl-3 py-1.5 pr-16  border border-gray-300 rounded transition-all cursor-pointer "
             onClick={() =>
               speciality === "Pediatricians"
                 ? navigate("/doctors")
@@ -100,7 +86,7 @@ function Doctors() {
             Pediatricians
           </p>
 
-          <p
+          <p className="w-[94vw] sm:w-auto  pl-3 py-1.5 pr-16  border border-gray-300 rounded transition-all cursor-pointer "
             onClick={() =>
               speciality === "Neurologist"
                 ? navigate("/doctors")
@@ -115,7 +101,7 @@ function Doctors() {
             Neurologist
           </p>
 
-          <p
+          <p className="w-[94vw] sm:w-auto  pl-3 py-1.5 pr-16  border border-gray-300 rounded transition-all cursor-pointer "
             onClick={() =>
               speciality === "Gastroenterologist"
                 ? navigate("/doctors")
@@ -130,7 +116,7 @@ function Doctors() {
             Gastroenterologist
           </p>
         </div>
-        <div className="topdoctorscard">
+        <div className="topDoctors-card w-full gap-4 gap-y-6">
           {filterDoc.map((item, index) => (
             <div
               onClick={() => navigate(`/appointment/${item._id}`)}

@@ -43,7 +43,7 @@ function MyProfile() {
    }
 
   return userData &&(
-    <div style={{maxWidth:"512px", display:"flex",flexDirection:"column",gap:"0.5rem",fontSize:"14px"}}>
+    <div className='max-w-lg flex flex-col gap-2 text-sm'>
       
       {
         isEdit 
@@ -123,8 +123,8 @@ function MyProfile() {
       <div style={{marginTop:"2.5rem"}}>
         {
           isEdit
-          ?<button onClick={updateUserProfileData} className='btn'>Save information</button>
-          :<button onClick={()=>setIsEdit(true)}className='btn'>Edit</button>
+          ?<button onClick={updateUserProfileData} className="text-center sm:min-w-48 py-2 border rounded-full bg-indigo-500 text-white hover:scale-105 transition-all duration-300 ">Save information</button>
+          :<button onClick={()=>setIsEdit(true)}className="text-center sm:min-w-48 py-2 border rounded-full bg-indigo-500 text-white hover:scale-105 transition-all duration-300 ">Edit</button>
         }
       </div>
     </div>
